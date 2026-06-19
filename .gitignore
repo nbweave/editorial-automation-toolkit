@@ -1,0 +1,37 @@
+# Python cache/build artifacts
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+build/
+dist/
+*.egg-info/
+
+# Virtual environments and local env files
+.venv/
+venv/
+env/
+.env
+.env.*
+
+# Secrets and service-account keys
+credentials.json
+*.credentials.json
+service-account*.json
+
+# Runtime state and logs
+*.log
+cron.log
+last_links.json
+downloaded_images/
+test_download/
+_web_jobs/
+golden_run_output*/
+
+# OS/editor noise
+.DS_Store
+Thumbs.db
+*.swp
+*.swo

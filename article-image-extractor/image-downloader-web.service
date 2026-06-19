@@ -1,0 +1,20 @@
+[Unit]
+Description=Article Image Downloader web UI
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+# Edit paths and user for the target host.
+User=www-data
+WorkingDirectory=/opt/article-image-extractor
+EnvironmentFile=/opt/article-image-extractor/web.env
+ExecStart=/usr/bin/python3 /opt/article-image-extractor/web_app.py
+Restart=on-failure
+RestartSec=5
+
+NoNewPrivileges=true
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target

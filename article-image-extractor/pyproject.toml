@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "image-downloader"
+version = "2.5.0"
+description = "Скачивание контентных изображений из веб-статей (с обходом Cloudflare)"
+requires-python = ">=3.8"
+dependencies = [
+    "curl_cffi==0.15.0",
+    "beautifulsoup4==4.14.3",
+    "Pillow==12.2.0",
+    "nodriver==0.48.1",
+]
+
+[project.scripts]
+image-downloader = "download_images:main"
+
+[tool.setuptools]
+py-modules = ["download_images", "site_extractors", "cf_browser_fetch"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
